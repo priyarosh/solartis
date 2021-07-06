@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation</title>
+</head>
+<body>
+    Frictional force:
+    <span id="result"></span>
+    <p id="check"></p>
+    <script>
+        document.getElementById('result').innerHTML = localStorage.getItem('totalvalue');
+        const params = new URLSearchParams(window.location.search)
+        const friction = params.get('friction');
+        console.log(friction);
+        var e=document.getElementById("check");
+        if (Number(friction)<=1000) {
+            e.innerHTML = "By estimating the Frictional Force is very low accident may occured due to skidding";
+        }
+        else if (Number(friction)<=5000) {
+            e.innerHTML = "By estimating the Frictional Force is normal ";
+        }
+        else if(Number(friction)<=8000){
+            e.innerHTML="By estimating the Frictional force is good"
+        }
+        else if (Number(friction)>=8000) {
+            e.innerHTML = "By estimating Frictional Force is very high and accident maybe occured due to overspeeding";
+        }
+    </script>
+</body>
+</html>
